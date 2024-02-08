@@ -306,9 +306,9 @@ namespace ClosedXML.Excel
 
         IXLRange RangeUsed();
 
-        IXLRange CopyTo(IXLCell target);
+        IXLRange CopyTo(IXLCell target, bool clearBefore = true);
 
-        IXLRange CopyTo(IXLRangeBase target);
+        IXLRange CopyTo(IXLRangeBase target, bool clearBefore = true);
 
         IXLSortElements SortRows { get; }
         IXLSortElements SortColumns { get; }

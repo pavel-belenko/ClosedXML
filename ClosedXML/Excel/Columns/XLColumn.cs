@@ -422,7 +422,14 @@ namespace ClosedXML.Excel
 
         public IXLColumn CopyTo(IXLColumn column)
         {
-            column.Clear();
+            return CopyTo(column);
+        }
+
+        public IXLColumn CopyTo(IXLColumn column, bool clearBefore = true)
+        {
+            if(clearBefore)
+                column.Clear();
+
             var newColumn = (XLColumn)column;
             newColumn.Width = Width;
             newColumn.InnerStyle = InnerStyle;

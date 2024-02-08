@@ -15,10 +15,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <!-- NU5104 - SixLabors.Fonts is available only as a prerelease -->
     <NoWarn>$(NoWarn);NU1605;NU5104;CS1591</NoWarn>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <EmbeddedResource Include="Graphics\Fonts\CarlitoBare-Bold.ttf" />
     <EmbeddedResource Include="Graphics\Fonts\CarlitoBare-BoldItalic.ttf" />

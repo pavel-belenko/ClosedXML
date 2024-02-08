@@ -85,9 +85,9 @@ namespace ClosedXML.Excel
 
         Int32 CellCount();
 
-        IXLRangeColumn CopyTo(IXLCell target);
+        IXLRangeColumn CopyTo(IXLCell target, bool clearBefore = true);
 
-        IXLRangeColumn CopyTo(IXLRangeBase target);
+        IXLRangeColumn CopyTo(IXLRangeBase target, bool clearBefore = true);
 
         IXLRangeColumn Sort(XLSortOrder sortOrder = XLSortOrder.Ascending, Boolean matchCase = false, Boolean ignoreBlanks = true);
 

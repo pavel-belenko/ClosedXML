@@ -1569,14 +1569,14 @@ namespace ClosedXML.Excel
             return Worksheet.Range(firstCell, lastCell);
         }
 
-        public virtual void CopyTo(IXLRangeBase target)
+        public virtual void CopyTo(IXLRangeBase target, bool clearBefore = true)
         {
-            CopyTo((XLCell)target.FirstCell());
+            CopyTo((XLCell)target.FirstCell(), clearBefore);
         }
 
-        internal void CopyTo(XLCell target)
+        internal void CopyTo(XLCell target, bool clearBefore = true)
         {
-            target.CopyFrom(this);
+            target.CopyFrom(this, clearBefore);
         }
 
         //public IXLChart CreateChart(Int32 firstRow, Int32 firstColumn, Int32 lastRow, Int32 lastColumn)

@@ -231,6 +231,7 @@ namespace ClosedXML.Excel
         /// <param name="rangeBase">Range whose content to copy.</param>
         /// <returns>This cell.</returns>
         IXLCell CopyFrom(IXLRangeBase rangeBase);
+        IXLCell CopyFrom(IXLRangeBase rangeBase, bool clearBefore = true);
 
         IXLCell CopyTo(IXLCell target);
 

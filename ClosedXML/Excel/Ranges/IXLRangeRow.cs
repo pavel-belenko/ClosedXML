@@ -93,9 +93,9 @@ namespace ClosedXML.Excel
 
         Int32 CellCount();
 
-        IXLRangeRow CopyTo(IXLCell target);
+        IXLRangeRow CopyTo(IXLCell target, bool clearBefore = true);
 
-        IXLRangeRow CopyTo(IXLRangeBase target);
+        IXLRangeRow CopyTo(IXLRangeBase target, bool clearBefore = true);
 
         IXLRangeRow Sort();
 

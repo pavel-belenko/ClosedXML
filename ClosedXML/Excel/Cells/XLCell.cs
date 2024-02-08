@@ -1429,6 +1429,11 @@ namespace ClosedXML.Excel
 
         public IXLCell CopyFrom(IXLRangeBase rangeObject)
         {
+            return CopyFrom(rangeObject, true);
+        }
+
+        public IXLCell CopyFrom(IXLRangeBase rangeObject, bool clearBefore = true)
+        {
             if (rangeObject is null)
                 throw new ArgumentNullException(nameof(rangeObject));
 
@@ -1441,7 +1446,7 @@ namespace ClosedXML.Excel
 
             var targetRange = Worksheet.Range(_rowNumber, _columnNumber, lastRow, lastColumn);
 
-            if (!(asRange is XLRow || asRange is XLColumn))
+            if (!(asRange is XLRow || asRange is XLColumn) && clearBefore)
             {
                 targetRange.Clear();
             }

@@ -96,9 +96,9 @@ namespace ClosedXML.Excel
             return this;
         }
 
-        public IXLRangeColumn CopyTo(IXLCell target)
+        public IXLRangeColumn CopyTo(IXLCell target, bool clearBefore = true)
         {
-            base.CopyTo((XLCell)target);
+            base.CopyTo((XLCell)target, clearBefore);
 
             int lastRowNumber = target.Address.RowNumber + RowCount() - 1;
             if (lastRowNumber > XLHelper.MaxRowNumber)
@@ -115,9 +115,9 @@ namespace ClosedXML.Excel
                 .Column(1);
         }
 
-        public new IXLRangeColumn CopyTo(IXLRangeBase target)
+        public new IXLRangeColumn CopyTo(IXLRangeBase target, bool clearBefore = true)
         {
-            base.CopyTo(target);
+            base.CopyTo(target, clearBefore);
 
             int lastRowNumber = target.RangeAddress.FirstAddress.RowNumber + RowCount() - 1;
             if (lastRowNumber > XLHelper.MaxRowNumber)

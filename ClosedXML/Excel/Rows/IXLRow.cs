@@ -172,11 +172,11 @@ namespace ClosedXML.Excel
 
         Int32 CellCount();
 
-        IXLRangeRow CopyTo(IXLCell cell);
+        IXLRangeRow CopyTo(IXLCell cell, bool clearBefore = true);
 
-        IXLRangeRow CopyTo(IXLRangeBase range);
+        IXLRangeRow CopyTo(IXLRangeBase range, bool clearBefore = true);
 
-        IXLRow CopyTo(IXLRow row);
+        IXLRow CopyTo(IXLRow row, bool clearBefore = true);
 
         IXLRow Sort();
 

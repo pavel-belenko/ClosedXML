@@ -486,28 +486,29 @@ namespace ClosedXML.Excel
             return this;
         }
 
-        IXLRangeRow IXLRow.CopyTo(IXLCell target)
+        IXLRangeRow IXLRow.CopyTo(IXLCell target, bool clearBefore)
         {
-            var copy = AsRange().CopyTo(target);
+            var copy = AsRange().CopyTo(target, clearBefore);
             return copy.Row(1);
         }
 
-        IXLRangeRow IXLRow.CopyTo(IXLRangeBase target)
+        IXLRangeRow IXLRow.CopyTo(IXLRangeBase target, bool clearBefore)
         {
-            var copy = AsRange().CopyTo(target);
+            var copy = AsRange().CopyTo(target, clearBefore);
             return copy.Row(1);
         }
 
-        public IXLRow CopyTo(IXLRow row)
+        public IXLRow CopyTo(IXLRow row, bool clearBefore = true)
         {
-            row.Clear();
+            if(clearBefore)
+                row.Clear();
             var newRow = (XLRow)row;
             newRow._height = _height;
             newRow.HeightChanged = HeightChanged;
             newRow.InnerStyle = GetStyle();
             newRow.IsHidden = IsHidden;
 
-            AsRange().CopyTo(row);
+            AsRange().CopyTo(row, clearBefore);
 
             return newRow;
         }
