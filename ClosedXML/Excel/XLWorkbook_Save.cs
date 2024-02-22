@@ -3356,7 +3356,6 @@ namespace ClosedXML.Excel
                 workbookStylesPart.Stylesheet.DifferentialFormats = new DifferentialFormats();
 
             var differentialFormats = workbookStylesPart.Stylesheet.DifferentialFormats;
-            differentialFormats.RemoveAllChildren();
             FillDifferentialFormatsCollection(differentialFormats, context.DifferentialFormats);
 
             foreach (var ws in Worksheets)
